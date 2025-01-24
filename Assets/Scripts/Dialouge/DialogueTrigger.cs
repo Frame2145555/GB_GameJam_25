@@ -21,9 +21,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] List<Pair<string,AnimatorController>> animControllersWithTag;
 
     bool playerInRange;
-    bool played = false;
-
-
+    bool isPlayed = false;
 
     private void Awake()
     {
@@ -32,7 +30,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && !DialogueManager.Instance.DialogueIsPlaying && !played)
+        if (playerInRange && !DialogueManager.Instance.DialogueIsPlaying && !isPlayed)
         {
             switch (mode)
             {
@@ -51,7 +49,7 @@ public class DialogueTrigger : MonoBehaviour
     private void StartDialouge() 
     {
         DialogueManager.Instance.EnterDialogueMode(inkJSON, animControllersWithTag);
-        played = true;
+        isPlayed = true;
     } 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -69,4 +67,7 @@ public class DialogueTrigger : MonoBehaviour
             playerInRange = false;
         }
     }
+
+    public void SetPlayable(bool value) => isPlayed = value;
+    
 }
