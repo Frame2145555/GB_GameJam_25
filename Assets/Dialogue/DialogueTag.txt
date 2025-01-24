@@ -1,0 +1,7 @@
+Name	-> Set Name
+Spawn	-> Spawn Actor
+Target	-> Set Target Actor
+Face	-> Set Targeted Actor Face
+x	-> Set Targeted Actor x Pos
+y	-> Set Targeted Actor y Pos
+size	-> Set Targeted Actor size
