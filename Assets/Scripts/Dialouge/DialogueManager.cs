@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TextMeshProUGUI dialogueText;
     [SerializeField] TextMeshProUGUI speakerText;
-    [SerializeField] GameObject characterDummy;
+    [SerializeField] GameObject actor;
 
     [Header("Choice UI")]
     [SerializeField] GameObject[] choices;
@@ -152,7 +152,7 @@ public class DialogueManager : MonoBehaviour
                     speakerText.text = value;
                     break;
                 case SPAWN_TAG:
-                    characterStore.Add(value, Instantiate(characterDummy,dialoguePanel.transform.parent));
+                    characterStore.Add(value, Instantiate(actor,dialoguePanel.transform.parent));
                     characterStore[value].SetActive(true);
                     characterStore[value].transform.SetAsFirstSibling();
                     characterStore[value].GetComponent<Animator>().runtimeAnimatorController 

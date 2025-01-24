@@ -20,7 +20,7 @@ public class PlayerControllerSample : MonoBehaviour
         // stop movement if dialouge is playing
         if (DialogueManager.Instance.DialogueIsPlaying) return;
 
-       rb.linearVelocityX = moveSpeed * InputManager.Instance.GetMoveVector().x;
+        rb.linearVelocityX = moveSpeed * InputManager.Instance.GetMoveVector().x;
 
         if (InputManager.Instance.IsJumpKeyDown)
         {

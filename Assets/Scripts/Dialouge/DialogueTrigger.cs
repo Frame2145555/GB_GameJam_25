@@ -7,9 +7,6 @@ using UnityEngine.InputSystem;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [Header("Visual Cue")]
-    [SerializeField] GameObject visualCue;
-
     [Header("Ink JSON")]
     [SerializeField] TextAsset inkJSON;
 
@@ -21,22 +18,16 @@ public class DialogueTrigger : MonoBehaviour
     private void Awake()
     {
         playerInRange = false;
-        visualCue.SetActive(false);
     }
 
     private void Update()
     {
         if (playerInRange && !DialogueManager.Instance.DialogueIsPlaying)
         {
-            visualCue.SetActive(true);
             if (InputManager.Instance.IsInteractKeyDown)
             {
                 DialogueManager.Instance.EnterDialogueMode(inkJSON,animControllersWithTag);
             }
-        }
-        else
-        {
-            visualCue.SetActive(false);
         }
     }
 
