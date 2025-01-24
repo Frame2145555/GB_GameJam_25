@@ -4,9 +4,16 @@ using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
+public enum DialougeTriggerMode
+{
+    OnInteract,
+    OnEnter
+}
 public class DialogueTrigger : MonoBehaviour
 {
+    [Header("Dialogue Mode")]
+    [SerializeField] DialougeTriggerMode mode = DialougeTriggerMode.OnEnter;
+
     [Header("Ink JSON")]
     [SerializeField] TextAsset inkJSON;
 
@@ -14,6 +21,9 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] List<Pair<string,AnimatorController>> animControllersWithTag;
 
     bool playerInRange;
+    bool played = false;
+
+
 
     private void Awake()
     {
@@ -22,14 +32,27 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && !DialogueManager.Instance.DialogueIsPlaying)
+        if (playerInRange && !DialogueManager.Instance.DialogueIsPlaying && !played)
         {
-            if (InputManager.Instance.IsInteractKeyDown)
+            switch (mode)
             {
-                DialogueManager.Instance.EnterDialogueMode(inkJSON,animControllersWithTag);
+                case DialougeTriggerMode.OnInteract:
+                    if (InputManager.Instance.IsInteractKeyDown)
+                        StartDialouge();
+                    break;
+                case DialougeTriggerMode.OnEnter:
+                    StartDialouge();
+                    break;
+
             }
         }
     }
+
+    private void StartDialouge() 
+    {
+        DialogueManager.Instance.EnterDialogueMode(inkJSON, animControllersWithTag);
+        played = true;
+    } 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
