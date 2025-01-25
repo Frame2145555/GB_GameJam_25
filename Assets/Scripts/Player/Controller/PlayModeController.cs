@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PlayModeController : MonoBehaviour
 {
@@ -7,6 +9,8 @@ public class PlayModeController : MonoBehaviour
 
     [Header("Speed Control")]
     [SerializeField] float speed = 10;
+
+    [SerializeField] List<celineanimation> anim;
 
     private void Start()
     {
@@ -30,10 +34,22 @@ public class PlayModeController : MonoBehaviour
 
         float dir = InputManager.Instance.GetMoveVector().x;
         rb.linearVelocityX = dir * speed;
-    }
 
-    void OnBattleModeEnter()
-    {
-        gameObject.SetActive(false);
+        for (int i = 0; i < anim.Count; i++)
+        {
+            if (InputManager.Instance.GetMoveVector().x != 0)
+            {
+                anim[i].runanmation();
+            }
+            else
+            {
+                anim[i].idleanmation();
+            }
+        }
+
     }
+        void OnBattleModeEnter()
+        {
+            gameObject.SetActive(false);
+        }
 }
