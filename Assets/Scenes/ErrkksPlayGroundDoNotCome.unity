@@ -1876,6 +1876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1935732597}
   - component: {fileID: 1935732598}
+  - component: {fileID: 1935732599}
   m_Layer: 0
   m_Name: Battle Mode Manager
   m_TagString: Untagged
@@ -1910,7 +1911,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35c21d220d60db49816847a2b81b93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bmds: {fileID: 0}
+  bmps: {fileID: 0}
   map: {fileID: 1485186410}
+  battleModeTimeline: 
+--- !u!114 &1935732599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935732596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdde0e705a83c74397ad4a0a2da79a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSON_s:
+  - {fileID: 4900000, guid: 1a96f7cf2403e714cbb57f42d2bb08a5, type: 3}
+  - {fileID: 4900000, guid: f69a10f65cc2b334394a5303f961b751, type: 3}
+  animControllersWithTags:
+  - innerList: []
+  - innerList:
+    - First: Granny
+      Second: {fileID: 9100000, guid: 7303a89dc64f97a43862dcee38d80755, type: 2}
+    - First: Granny2
+      Second: {fileID: 9100000, guid: 7303a89dc64f97a43862dcee38d80755, type: 2}
 --- !u!1 &1944061389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,7 +2167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2090091074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2514,10 +2540,10 @@ RectTransform:
   - {fileID: 2339616404880510779}
   m_Father: {fileID: 7829107046635242609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 225, y: -5}
-  m_SizeDelta: {x: 450, y: 10}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1351230719016735370
 GameObject:
@@ -2883,10 +2909,10 @@ RectTransform:
   - {fileID: 5109500422733397754}
   m_Father: {fileID: 7829107046635242609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 675, y: -5}
-  m_SizeDelta: {x: 450, y: 10}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3939994134818610962
 RectTransform:
@@ -3564,10 +3590,10 @@ RectTransform:
   - {fileID: 5096732631377334137}
   m_Father: {fileID: 7829107046635242609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1575, y: -5}
-  m_SizeDelta: {x: 450, y: 10}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8538226519694134537
 MonoBehaviour:
@@ -3711,10 +3737,10 @@ RectTransform:
   - {fileID: 2097480016926665622}
   m_Father: {fileID: 7829107046635242609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1125, y: -5}
-  m_SizeDelta: {x: 450, y: 10}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
