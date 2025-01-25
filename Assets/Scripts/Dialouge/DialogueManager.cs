@@ -32,6 +32,8 @@ public class DialogueManager : MonoBehaviour
     RectTransform targetRectTransform;
     Animator targetAnimator;
 
+    string valueTag = "";
+
     Story currentStory;
     
     bool dialogueIsPlaying;
@@ -52,6 +54,7 @@ public class DialogueManager : MonoBehaviour
     
     public static DialogueManager Instance { get => instance; } 
     public bool DialogueIsPlaying { get => dialogueIsPlaying; }
+    public string ValueTag { get => valueTag; }
 
     private void Awake()
     {
