@@ -10,10 +10,13 @@ public class GameManager : MonoBehaviour
 {
     static GameManager instance;
 
-    [Header("Tuning")]
+    Fade fade;
+
+    [Header("Game")]
     [SerializeField] int teleportBackTimes = 3;
     int teleportBackCount = 0;
     public static GameManager Instance { get => instance; }
+    public int TeleportBackCount { get => teleportBackCount; set => teleportBackCount = value; }
 
     private void Awake()
     {
@@ -31,11 +34,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+        fade = FindAnyObjectByType<Fade>();
     }
 
     private void Update()
     {
         
     }
+
 }

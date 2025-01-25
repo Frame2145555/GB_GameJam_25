@@ -50,6 +50,7 @@ public class Trasition_Frame : MonoBehaviour
         if (targetPosition != null)
         {
             objectToTeleport.transform.position = targetPosition.position;
+
             Debug.Log($"{objectToTeleport.name} teleported to: {targetPosition.position}");
         }
         else
