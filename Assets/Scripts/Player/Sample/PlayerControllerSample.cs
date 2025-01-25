@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerControllerSample : MonoBehaviour
 {
     Rigidbody2D rb;
-
+[SerializeField] celineanimation anim;
     [Header("Movement")]
     [SerializeField] float moveSpeed = 5;
     [SerializeField] float jumpStrength = 5;
@@ -26,7 +26,13 @@ public class PlayerControllerSample : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
         }
-
+if (InputManager.Instance.GetMoveVector().x!=0)
+{
+    anim.runanmation();
+}else
+{
+    anim.idleanmation();
+}
 
     }
 }
