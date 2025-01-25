@@ -94,11 +94,6 @@ public class BattleModeManager : MonoBehaviour
 
     public void EnterBattleMode()
     {
-        EnterBattleModeCoroutine();
-    }
-
-    private void EnterBattleModeCoroutine()
-    {
         isBattleModeActive = true;
         OnBattleModeEnter?.Invoke();
 
@@ -107,4 +102,5 @@ public class BattleModeManager : MonoBehaviour
         map.SetActive(true);
         NextBattlePhase();
     }
+
 }
