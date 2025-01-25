@@ -69,7 +69,7 @@ public class BattleModeManager : MonoBehaviour
             NextBattlePhase();
     }
     
-    void NextBattlePhase()
+    public void NextBattlePhase()
     {
         if (currentBattleIndex + 1 >= battleModeTimeline.Count)
         {

@@ -72,4 +72,8 @@ public class PinBulletPattern : ConcreteBulletPattern
             }
         }
     }
+
+    protected override void Update()
+    {
+    }
 }

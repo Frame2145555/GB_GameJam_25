@@ -21,7 +21,6 @@ public class SpikeBulletPattern : ConcreteBulletPattern
 
     protected override void Update()
     {
-        base.Update();
     }
 
     private IEnumerator transformPosition()

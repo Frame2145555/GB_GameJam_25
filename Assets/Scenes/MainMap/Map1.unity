@@ -2653,6 +2653,37 @@ MonoBehaviour:
   - {x: 0.32157898, y: 7.0261693, z: 0}
   - {x: -0.84980774, y: 6.656257, z: 0}
   - {x: -1.5870628, y: 5.397287, z: 0}
+--- !u!1 &234528865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 234528866}
+  m_Layer: 0
+  m_Name: Knife Spawn Reference
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &234528866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234528865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.800003, y: -1.2999992, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 696090682}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &275355441
 GameObject:
   m_ObjectHideFlags: 0
@@ -4934,6 +4965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 696090682}
+  - component: {fileID: 696090683}
   m_Layer: 0
   m_Name: PattternStore
   m_TagString: Untagged
@@ -4953,9 +4985,28 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 234528866}
   m_Father: {fileID: 6434504456646749694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &696090683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696090681}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089dab7aa09064d44aedea71d6cd60ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knifePrefab: {fileID: 4391793497842205185, guid: ed60ff5b197c1fc43932895c86efb0c7, type: 3}
+  spawnReference: {fileID: 234528866}
+  minSpawnInterval: 0.5
+  maxSpawnInterval: 2
+  minY: -5
+  maxY: 5
 --- !u!1 &713686772
 GameObject:
   m_ObjectHideFlags: 0
@@ -5865,9 +5916,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 656823002}
     - target: {fileID: 199803656436405279, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
+      propertyPath: patternHolder
+      value: 
+      objectReference: {fileID: 696090681}
+    - target: {fileID: 199803656436405279, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
       propertyPath: bulletPatterns.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 199803656436405279, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
+      propertyPath: 'bulletPatterns.Array.data[0]'
+      value: 
+      objectReference: {fileID: 696090683}
     - target: {fileID: 626735056578561013, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.521035
@@ -8453,6 +8512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1297338298}
   - component: {fileID: 1297338295}
+  - component: {fileID: 1297338300}
   - component: {fileID: 1297338297}
   - component: {fileID: 1297338296}
   - component: {fileID: 1297338299}
@@ -8617,6 +8677,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1297338300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297338294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1443ee7ee06de06489e9ae7736e5bb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 20
 --- !u!1 &1338934063
 GameObject:
   m_ObjectHideFlags: 0

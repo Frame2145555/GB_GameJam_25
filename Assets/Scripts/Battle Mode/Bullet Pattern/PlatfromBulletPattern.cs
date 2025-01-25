@@ -84,4 +84,8 @@ public class PlatformBulletPattern : ConcreteBulletPattern
             yield return null;
         }
     }
+
+    protected override void Update()
+    {
+    }
 }
