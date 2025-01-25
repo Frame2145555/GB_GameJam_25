@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-
-public class TeleportTrigger : MonoBehaviour
+public class TeleportTrigger3 : MonoBehaviour
 {
+
     Transform cameraTransform;
     [Header("Teleport To Position")]
     [SerializeField] Transform target;
@@ -12,7 +12,7 @@ public class TeleportTrigger : MonoBehaviour
     [Header("Handle Fade")]
     [SerializeField] float fadeInTime = 0.2f;
     [SerializeField] float fadeOutTime = 0.5f;
-     
+    [SerializeField] celineanimation anim;
     Fade fade;
 
     UnityEvent onFadeFinished = new UnityEvent();
@@ -35,7 +35,7 @@ public class TeleportTrigger : MonoBehaviour
 
             countLoop++;
 
-              
+            anim.jebleaw();
         }
     }
 
@@ -64,10 +64,10 @@ public class TeleportTrigger : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
-        Vector2 TL = new Vector3(-6.22f*2, 3.5f*2)  + cameraTarget.position;
-        Vector2 TR = new Vector3(6.22f * 2, 3.5f * 2)   + cameraTarget.position;
+        Vector2 TL = new Vector3(-6.22f * 2, 3.5f * 2) + cameraTarget.position;
+        Vector2 TR = new Vector3(6.22f * 2, 3.5f * 2) + cameraTarget.position;
         Vector2 BL = new Vector3(-6.22f * 2, -3.5f * 2) + cameraTarget.position;
-        Vector2 BR = new Vector3(6.22f * 2, -3.5f * 2)  + cameraTarget.position;
+        Vector2 BR = new Vector3(6.22f * 2, -3.5f * 2) + cameraTarget.position;
 
         Gizmos.DrawLine(TL, TR);
         Gizmos.DrawLine(TR, BR);
