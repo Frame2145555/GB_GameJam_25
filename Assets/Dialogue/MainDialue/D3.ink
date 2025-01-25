@@ -1,1 +1,1 @@
-"This image looks familiar, like I've seen it somewhere before." #Speaker:Cline #Spawn:Cline #Target:Cline #x:-600 #y:-160 #size:0.7     #size:0.7 Fact:2
+"This image looks familiar, like I've seen it somewhere before." #Speaker:Cline #Spawn:Cline #Target:Cline #x:-600 #y:-160 #size:0.7 #size:0.7 #Fact:4
