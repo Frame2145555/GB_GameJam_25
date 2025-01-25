@@ -4,27 +4,26 @@ using UnityEngine.Events;
 
 public abstract class ConcreteBulletPattern : MonoBehaviour
 {
+    public UnityAction OnPatternStart;
+    public UnityAction OnPatternEnd;
+
     private void Start()
     {
         PatternStart();
     }
 
-    
-    protected virtual void Update()
-    {
-        
-    }
+    protected abstract void Update();
 
     public virtual void PatternStart()
     {
-        Debug.Log("Pattern started");
+        OnPatternStart?.Invoke();
         BattleModeManager.Instance.IsInBattle = true;
     }
 
     public virtual void PatternEnd()
     {
-        Debug.Log("Pattern ended");
         BattleModeManager.Instance.IsInBattle = false;
+        OnPatternEnd?.Invoke();
         this.enabled = false;
     }
 
