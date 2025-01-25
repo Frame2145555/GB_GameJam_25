@@ -19,20 +19,21 @@ public class celineanimation : MonoBehaviour
     public void idleanmation() { anim.SetBool("isrun", false); }
 
     int isleft()
-    {
+    {  float x =  Input.GetAxis("Horizontal");
+    
         last = a;
-        if (Input.GetKey (KeyCode.D) && Input.GetKey (KeyCode.A))
+        if (x==0)
         {
-            Debug.Log("all");
+             
             a = last;
         }else 
         
-        if (Input.GetKey (KeyCode.A))
+        if (x<0)
         {
-            Debug.Log("left");
+           
             a = true;
         }
-        else if (Input.GetKey(KeyCode.D)) { a = false; Debug.Log("right"); }
+        else if (x>0) { a = false;   }
         
 
 
