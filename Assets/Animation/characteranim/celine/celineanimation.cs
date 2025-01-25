@@ -4,7 +4,7 @@ using System;
 public class celineanimation : MonoBehaviour
 {
     [SerializeField] bool last;
-    Animator anim;
+    protected Animator anim;
     [SerializeField] bool a = true;
     [SerializeField] int b;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
