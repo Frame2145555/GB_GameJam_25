@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Granny_Idle_Animation_Left 2_0: -6636401701062524127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
