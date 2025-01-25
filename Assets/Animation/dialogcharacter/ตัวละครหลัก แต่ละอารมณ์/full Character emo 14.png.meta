@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      full Character emo 14_0: 3098043770834371504
+      full Character emo 14_1: -9135582204157336181
+      full Character emo 14_2: 618797152992341124
+      full Character emo 14_3: -7996130875501014036
+      full Character emo 14_4: -5595260984708855344
+      full Character emo 14_5: -5408249050137261360
+      full Character emo 14_6: -8502427142224519838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

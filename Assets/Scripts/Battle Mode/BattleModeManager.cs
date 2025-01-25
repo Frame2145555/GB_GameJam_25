@@ -102,4 +102,5 @@ public class BattleModeManager : MonoBehaviour
         map.SetActive(true);
         NextBattlePhase();
     }
+
 }
