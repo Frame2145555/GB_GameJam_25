@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using System.Collections.Generic;
 public class PlayerControllerSample : MonoBehaviour
 {
     Rigidbody2D rb;
-[SerializeField] celineanimation anim;
+[SerializeField] List<celineanimation> anim;
     [Header("Movement")]
     [SerializeField] float moveSpeed = 5;
     [SerializeField] float jumpStrength = 5;
@@ -26,13 +26,20 @@ public class PlayerControllerSample : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
         }
-if (InputManager.Instance.GetMoveVector().x!=0)
+for (int i = 0; i < anim.Count; i++)
 {
-    anim.runanmation();
+    if (InputManager.Instance.GetMoveVector().x!=0)
+{
+    anim[i].runanmation();
 }else
 {
-    anim.idleanmation();
+    anim[i].idleanmation();
 }
+}
+
+
+
+
 
     }
 }
