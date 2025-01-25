@@ -17,15 +17,8 @@ public class BattleModePatternStore : MonoBehaviour
         
         currentPatternIndex++;
 
-        Debug.Log("Played Pattern #" + currentPatternIndex);
-
-        // bulletPatterns[currentPatternIndex].enabled = true;
+        bulletPatterns[currentPatternIndex].enabled = true;
 
     }
-
-}
-
-internal class ConcreteBulletPattern : MonoBehaviour
-{ 
 
 }

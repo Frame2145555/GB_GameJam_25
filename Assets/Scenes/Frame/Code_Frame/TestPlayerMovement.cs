@@ -47,7 +47,6 @@ public class TestPlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // ตรวจสอบว่าตัวละครอยู่บนพื้นหรือไม่
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 

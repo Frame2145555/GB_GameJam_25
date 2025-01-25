@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class thirdMapController : concreteBullet
+public class PlatformBulletPattern : ConcreteBulletPattern
 {
     [SerializeField] GameObject[] floor;  // Array of floor objects to move
     [SerializeField] float moveSpeed = 2f;  // Speed of the movement

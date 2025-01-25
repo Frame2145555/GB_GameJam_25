@@ -12,8 +12,14 @@ public class PlayModeController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         fade = FindAnyObjectByType<Fade>();
+
+        BattleModeManager.Instance.OnBattleModeEnter += OnBattleModeEnter;
     }
 
+    private void OnDisable()
+    {
+        BattleModeManager.Instance.OnBattleModeEnter -= OnBattleModeEnter;
+    }
     private void Update()
     {
         if (DialogueManager.Instance.DialogueIsPlaying || fade.IsFadingOut)
@@ -24,5 +30,10 @@ public class PlayModeController : MonoBehaviour
 
         float dir = InputManager.Instance.GetMoveVector().x;
         rb.linearVelocityX = dir * speed;
+    }
+
+    void OnBattleModeEnter()
+    {
+        gameObject.SetActive(false);
     }
 }

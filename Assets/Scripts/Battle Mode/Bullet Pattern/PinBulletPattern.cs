@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class secondMapController : concreteBullet
+public class PinBulletPattern : ConcreteBulletPattern
 {
     [SerializeField] GameObject toInstantiate;         // Object to spawn
     [SerializeField] float spawnInterval = 1f;         // Time between spawns
