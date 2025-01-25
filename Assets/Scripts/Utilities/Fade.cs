@@ -64,7 +64,6 @@ public class Fade : MonoBehaviour
                 isFading = false;
             }
         }
-        Debug.Log(currentAlpha);
     }
 
     public void PlayFadeIn(float duration)

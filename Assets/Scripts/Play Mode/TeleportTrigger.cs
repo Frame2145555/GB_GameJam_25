@@ -13,7 +13,7 @@ public class TeleportTrigger : MonoBehaviour
 
     Fade fade;
 
-    UnityEvent onFadeFinished;
+    UnityEvent onFadeFinished = new UnityEvent();
 
     private void Start()
     {
