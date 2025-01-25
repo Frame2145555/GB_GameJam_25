@@ -274,6 +274,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4012616337890440913, guid: 38b111a75a3fad54d81d818244199609, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: f69a10f65cc2b334394a5303f961b751, type: 3}
+    - target: {fileID: 4012616337890440913, guid: 38b111a75a3fad54d81d818244199609, type: 3}
+      propertyPath: animControllersWithTag.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012616337890440913, guid: 38b111a75a3fad54d81d818244199609, type: 3}
+      propertyPath: animControllersWithTag.Array.data[0].First
+      value: Granny
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012616337890440913, guid: 38b111a75a3fad54d81d818244199609, type: 3}
+      propertyPath: animControllersWithTag.Array.data[1].First
+      value: Granny2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012616337890440913, guid: 38b111a75a3fad54d81d818244199609, type: 3}
+      propertyPath: animControllersWithTag.Array.data[0].Second
+      value: 
+      objectReference: {fileID: 9100000, guid: 7303a89dc64f97a43862dcee38d80755, type: 2}
+    - target: {fileID: 4012616337890440913, guid: 38b111a75a3fad54d81d818244199609, type: 3}
+      propertyPath: animControllersWithTag.Array.data[1].Second
+      value: 
+      objectReference: {fileID: 9100000, guid: 7303a89dc64f97a43862dcee38d80755, type: 2}
     - target: {fileID: 9115527113871683582, guid: 38b111a75a3fad54d81d818244199609, type: 3}
       propertyPath: m_Name
       value: Interactable (1)
@@ -1299,6 +1323,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4012616337890440913, guid: 38b111a75a3fad54d81d818244199609, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 263ef1036da9e4a4f8228a8475006045, type: 3}
     - target: {fileID: 9115527113871683582, guid: 38b111a75a3fad54d81d818244199609, type: 3}
       propertyPath: m_Name
       value: Interactable
@@ -1439,6 +1467,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4012616337890440913, guid: 38b111a75a3fad54d81d818244199609, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 1a96f7cf2403e714cbb57f42d2bb08a5, type: 3}
     - target: {fileID: 9115527113871683582, guid: 38b111a75a3fad54d81d818244199609, type: 3}
       propertyPath: m_Name
       value: Interactable (2)

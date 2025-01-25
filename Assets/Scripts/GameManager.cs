@@ -15,8 +15,10 @@ public class GameManager : MonoBehaviour
     [Header("Game")]
     [SerializeField] int teleportBackTimes = 3;
     int teleportBackCount = 0;
+
     public static GameManager Instance { get => instance; }
     public int TeleportBackCount { get => teleportBackCount; set => teleportBackCount = value; }
+    public bool IsInStartLoop() => teleportBackCount < teleportBackTimes;
 
     private void Awake()
     {
