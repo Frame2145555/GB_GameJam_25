@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Granny_Half_Body 1_0: -3640313167686151805
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

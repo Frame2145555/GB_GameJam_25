@@ -94,6 +94,11 @@ public class BattleModeManager : MonoBehaviour
 
     public void EnterBattleMode()
     {
+        EnterBattleModeCoroutine();
+    }
+
+    private void EnterBattleModeCoroutine()
+    {
         isBattleModeActive = true;
         OnBattleModeEnter?.Invoke();
 

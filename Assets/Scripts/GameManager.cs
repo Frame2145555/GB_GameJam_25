@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     static GameManager instance;
 
     [Header("Handle Story Loop")]
-    [SerializeField] Vector3 playerStartPosition;
+    Vector3 playerStartPosition;
+    Vector3 cameraStartPosition;
     [SerializeField] int loopLeft = 2;
 
     [Header("Triggers")]
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         playerStartPosition = FindAnyObjectByType<PlayModeController>().transform.position; 
+        cameraStartPosition = FindAnyObjectByType<Camera>().transform.position; 
 
         if (dimOverlay == null) Debug.LogError("Missing Dim Overlay");
 
@@ -66,12 +68,19 @@ public class GameManager : MonoBehaviour
 
     public void DoLoopStory(Transform playerTransform)
     {
+        if(loopLeft <= 0)
+        {
+            BattleModeManager.Instance.EnterBattleMode();
+            return;
+        }
+
         playerTransform.position = playerStartPosition;
+        Camera.main.transform.position = cameraStartPosition;
+        LoopLeft--;
     }
 
     public void EnterBattleMode()
     {
-        BattleModeManager.Instance.EnterBattleMode();
     }
 
     private void OnDrawGizmos()
