@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] int maxHP;
     int currentHP;
-public Image healthBarFill;
+    public Image healthBarFill;
     public int HP { get => currentHP; }
 
     public UnityAction OnTakeDamage;
@@ -16,7 +16,7 @@ public Image healthBarFill;
     private void Start()
     {
         currentHP = maxHP;
-          UpdateHealthBar();
+        UpdateHealthBar();
     }
     public bool IsAlive() => currentHP > 0;
 
@@ -35,7 +35,7 @@ public Image healthBarFill;
         {
             OnTakeDamage?.Invoke();
         }
-          UpdateHealthBar();
+        UpdateHealthBar();
     }
 
     public void Heal(int heal)
@@ -46,7 +46,7 @@ public Image healthBarFill;
         currentHP += heal;
 
         currentHP = Mathf.Clamp(currentHP, 0, maxHP);
-          UpdateHealthBar();
+        UpdateHealthBar();
     }
 
     public void Kill()
@@ -63,11 +63,11 @@ public Image healthBarFill;
         UpdateHealthBar();
     }
 
- private void UpdateHealthBar()
+    private void UpdateHealthBar()
     {
         if (healthBarFill != null)
         {
-            healthBarFill.fillAmount = currentHP /maxHP; // Update the fill based on health percentage
+            healthBarFill.fillAmount = (float)currentHP / (float)maxHP; // Update the fill based on health percentage
         }
     }
 
