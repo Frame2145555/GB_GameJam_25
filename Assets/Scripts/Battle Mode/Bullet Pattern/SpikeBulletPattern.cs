@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class firstMapController : concreteBullet
+public class SpikeBulletPattern : ConcreteBulletPattern
 {
     [SerializeField] GameObject thorn;
     public float moveSpeed = 0.1f;  // Speed at which the thorn moves (units per second)
@@ -10,6 +10,7 @@ public class firstMapController : concreteBullet
     {
         base.PatternStart();
         thornMovementCoroutine = StartCoroutine(transformPosition());
+        Invoke(nameof(PatternEnd), 5);
     }
     public override void PatternEnd()
     {
@@ -21,11 +22,6 @@ public class firstMapController : concreteBullet
     protected override void Update()
     {
         base.Update();
-        //Debug.Log(thorn.transform.position.x);
-        if(thorn.transform.position.x <= -52f)
-        {
-            PatternEnd();
-        }
     }
 
     private IEnumerator transformPosition()

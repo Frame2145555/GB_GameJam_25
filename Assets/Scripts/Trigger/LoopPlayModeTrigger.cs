@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class BattleModeEnterTrigger : MonoBehaviour
+public class LoopPlayModeTrigger : MonoBehaviour
 {
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.Instance.EnterBattleMode();
+            GameManager.Instance.DoLoopStory(collision.gameObject.transform);
         }
     }
 }
