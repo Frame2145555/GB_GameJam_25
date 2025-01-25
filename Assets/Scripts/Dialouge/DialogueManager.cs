@@ -126,9 +126,6 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
-
-            DisplayChoices();
-
             Parsetag(currentStory.currentTags);
         }
         else
@@ -187,42 +184,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void DisplayChoices()
-    {
-        List<Choice> currentChoices = currentStory.currentChoices;
 
-        if(currentChoices.Count > choices.Length)
-        {
-            Debug.LogWarning("More choices were given more than the UI can support. Number of choice given : " + currentChoices.Count);
-        }
-
-        int i = 0;
-        foreach(Choice choice in currentChoices)
-        {
-            choices[i].gameObject.SetActive(true);
-            choicesText[i].text = choice.text;
-            i++;
-        }
-
-        for (int j = i; j < choices.Length; j++)
-        {
-            choices[j].gameObject.SetActive(false);
-        }
-        StartCoroutine(SelectFirstChoiche());
-    }
-
-    IEnumerator SelectFirstChoiche()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-        yield return new WaitForEndOfFrame();
-        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
-
-    }
-
-    public void MakeChoice(int choiceIndex)
-    {
-        currentStory.ChooseChoiceIndex(choiceIndex);
-        ContinueStory();
-    }
 
 }

@@ -15,7 +15,10 @@ public class PlayModeController : MonoBehaviour
     private void Update()
     {
         if (DialogueManager.Instance.DialogueIsPlaying)
+        {
+            rb.linearVelocityX = 0;
             return;
+        }
 
         float dir = InputManager.Instance.GetMoveVector().x;
         rb.linearVelocityX = dir * speed;
