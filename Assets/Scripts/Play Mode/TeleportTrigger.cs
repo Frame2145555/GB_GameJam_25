@@ -12,10 +12,12 @@ public class TeleportTrigger : MonoBehaviour
     [Header("Handle Fade")]
     [SerializeField] float fadeInTime = 0.2f;
     [SerializeField] float fadeOutTime = 0.5f;
-
+    
     Fade fade;
 
     UnityEvent onFadeFinished = new UnityEvent();
+
+    private int countLoop = 0;
 
     private void Start()
     {
@@ -31,6 +33,9 @@ public class TeleportTrigger : MonoBehaviour
             fade.OnFadeOutFinish += SendFadeNotify;
             StartCoroutine(TriggerTeleportEvent(collision.gameObject));
 
+            countLoop++;
+
+          //  if (countLoop==3)
         }
     }
 
