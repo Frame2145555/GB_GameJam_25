@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cb4aad62713b1214a80702668861db2a
+guid: 6ac3b9d8783150a498330c0db6c043aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4572579863509212966
-    second: fog-overlay-free_0
+      213: 1940868088324573615
+    second: Granny_Idle_Animation_Left 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fog-overlay-free_0
+      name: Granny_Idle_Animation_Left 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 4466
-        height: 3000
+        width: 655
+        height: 999
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad0ed6837deea80c0800000000000000
-      internalID: -4572579863509212966
+      spriteID: fa94a704e395fea10800000000000000
+      internalID: 1940868088324573615
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      fog-overlay-free_0: -4572579863509212966
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
