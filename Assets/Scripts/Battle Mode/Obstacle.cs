@@ -11,6 +11,8 @@ public class Obstacle : MonoBehaviour
     [SerializeField] Vector2 velocity;
     [SerializeField] Vector2 acceleration;
     [SerializeField] bool LockVectorToVelocity;
+    [SerializeField] bool LockVelocityToTransform;
+    
 
     
 
@@ -36,8 +38,15 @@ public class Obstacle : MonoBehaviour
 
     protected virtual void Move()
     {
+
+        if (LockVelocityToTransform)
+        {
+            velocity = transform.up * velocity.magnitude;
+        }
+
         transform.Translate(velocity * Time.deltaTime);
         velocity += acceleration * Time.deltaTime;
+
         if (LockVectorToVelocity)
         {
             acceleration = Quaternion.AngleAxis(velocityAccelerationAngle, Vector3.forward) * velocity.normalized * acceleration.magnitude;
@@ -45,6 +54,16 @@ public class Obstacle : MonoBehaviour
         else
         {
             velocityAccelerationAngle = Vector2.SignedAngle(velocity, acceleration);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Health rH = collision.gameObject.GetComponent<Health>();
+            rH.TakeDamage(1);
+            Destroy(gameObject);
         }
     }
 

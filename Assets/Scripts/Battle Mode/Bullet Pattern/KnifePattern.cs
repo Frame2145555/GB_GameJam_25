@@ -9,6 +9,8 @@ public class KnifePattern : ConcreteBulletPattern
     [SerializeField] float maxSpawnInterval = 2.0f; // Maximum time between spawns
     [SerializeField] float minY = -5f; // Minimum Y position for spawning
     [SerializeField] float maxY = 5f; // Maximum Y position for spawning
+
+    [SerializeField] int knifeCount = 30;
     float timer;
     float currentSpawnInterval;
 
@@ -35,7 +37,7 @@ public class KnifePattern : ConcreteBulletPattern
             // Set a new random spawn interval
             currentSpawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
         }
-        if (knifeCounter > 20)
+        if (knifeCounter > knifeCount)
         {
             PatternEnd();
         }
