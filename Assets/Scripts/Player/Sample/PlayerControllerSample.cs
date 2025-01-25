@@ -26,7 +26,7 @@ public class PlayerControllerSample : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
         }
-for (int i = 0; i < anim.Count; i++)
+    for (int i = 0; i < anim.Count; i++)
 {
     if (InputManager.Instance.GetMoveVector().x!=0)
 {
