@@ -1,0 +1,1 @@
+"Where am I... How did I get here."  #Speaker:Cline #Spawn:Cline #Target:Cline #x:-600 #y:-160 #size:0.7     #size:0.7
