@@ -1046,17 +1046,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 178157894768770477, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 515639756}
+    - target: {fileID: 178157894768770477, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 912726885499702694}
+    - target: {fileID: 178157894768770477, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
+      propertyPath: cameraHolder
+      value: 
+      objectReference: {fileID: 519420032}
+    - target: {fileID: 178157894768770477, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
+      propertyPath: clampDynamicRegion.max
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 178157894768770477, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
+      propertyPath: clampDynamicRegion.min
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 626735056578561013, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.521035
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 626735056578561013, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1222202
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 626735056578561013, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.007734919
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 626735056578561013, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1086,6 +1106,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1575784204132539899, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3335640268319074860, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
       propertyPath: m_Name
       value: Manager
@@ -1105,6 +1129,14 @@ PrefabInstance:
     - target: {fileID: 5670521826737997057, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
       propertyPath: choices.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847401214015152448, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847401214015152448, guid: 3bccd9b48516c9544a12a353d0840740, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
