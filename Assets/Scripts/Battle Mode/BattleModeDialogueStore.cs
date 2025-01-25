@@ -1,3 +1,4 @@
+using Ink.Parsed;
 using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -6,10 +7,11 @@ using UnityEngine;
 public class BattleModeDialogueStore : MonoBehaviour
 {
     [Header("Ink JSON Store")]
-    [SerializeField] List<TextAsset> inkJSONs;
+    [SerializeField] List<TextAsset> inkJSON_s;
 
     [Header("Character Animator Store")]
-    [SerializeField] List<List<Pair<string, AnimatorController>>> animControllersWithTags;
+    [SerializeField] List<InnerList<Pair<string, AnimatorController>>> animControllersWithTags;
+
 
     int dialogueIndex = -1;
 
@@ -25,18 +27,19 @@ public class BattleModeDialogueStore : MonoBehaviour
 
     public void NextDialogue()
     {
-        dialogueIndex++;
-
-        if (dialogueIndex >= inkJSONs.Count)
+        if (dialogueIndex + 1 >= inkJSON_s.Count)
         {
             Debug.LogWarning("No more dialogue left to be play");
             return;
         }
+        else if (BattleModeManager.Instance.IsInBattle || DialogueManager.Instance.DialogueIsPlaying)
+            return;
+
+        dialogueIndex++;
 
         DialogueManager.Instance.EnterDialogueMode(
-            inkJSONs[dialogueIndex],
-            animControllersWithTags[dialogueIndex]);
-
+            inkJSON_s[dialogueIndex],
+            animControllersWithTags[dialogueIndex].innerList);
 
     }
 }

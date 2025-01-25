@@ -1,15 +1,18 @@
 using UnityEngine;
+public enum ControllerMode 
+{ 
+    SideScroll, 
+    Topdown 
+}
 
 public class BattleModeController : MonoBehaviour
 {
-    public enum m_mode { sideScroll, topdown }
-    public m_mode Mode;
+    public ControllerMode Mode;
     public float m_topdownSpeed = 5.0f;
     public float m_sideScrollSpeed = 5.0f;
     public float m_sideJumpHeight = 15.0f;
 
     private Rigidbody2D rb;
-    public Vector2 moveDirection;
     public Vector2 boxSize;
     public float castDistance;
     public LayerMask groundlayer;
@@ -19,52 +22,44 @@ public class BattleModeController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        ChangeMode();
-        Ability();
         Move();
-        Jump();
     }
-
-    public void ChangeMode()
+    public void Move()
     {
         switch (Mode)
         {
-            case m_mode.sideScroll:
+            case ControllerMode.SideScroll:
                 HandleSideScroll();
+                Jump();
                 break;
-
-            case m_mode.topdown:
+            case ControllerMode.Topdown:
                 HandleTopdown();
                 break;
         }
     }
+
+    public void ChangeMode(ControllerMode mode)
+    {
+        Mode = mode;
+    }
     public void HandleSideScroll()
     {
-        float m_Input = Input.GetAxis("Horizontal");
+        float m_Input = InputManager.Instance.GetMoveVector().x;
         rb.linearVelocity = new Vector2(m_Input * m_sideScrollSpeed, rb.linearVelocity.y);
-
     }
+
     public void HandleTopdown()
     {
-        float moveInputX = Input.GetAxisRaw("Horizontal");
-        float moveInputY = Input.GetAxisRaw("Vertical");
-        moveDirection = new Vector2(moveInputX, moveInputY).normalized;
+        Vector2 moveDirection = InputManager.Instance.GetMoveVector();
         rb.linearVelocity = moveDirection * m_topdownSpeed;
     }
 
-    public void Move()
-    {
-        float m_Input = Input.GetAxis("Horizontal");
-        rb.linearVelocity = new Vector2(m_Input * m_sideScrollSpeed, rb.linearVelocity.y);
-    }
     public void Jump()
     {
         if (Input.GetButtonDown("Jump") && isGrounded())
-        {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, m_sideJumpHeight);
-        }
     }
     public void Ability()
     {
