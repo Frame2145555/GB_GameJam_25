@@ -48,8 +48,8 @@ public class DialogueTrigger : MonoBehaviour
 
     private void StartDialouge() 
     {
-        DialogueManager.Instance.EnterDialogueMode(inkJSON, animControllersWithTag);
         isPlayed = true;
+        DialogueManager.Instance.EnterDialogueMode(inkJSON, animControllersWithTag);
     } 
 
     private void OnTriggerEnter2D(Collider2D collision)
