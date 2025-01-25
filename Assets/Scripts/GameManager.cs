@@ -15,12 +15,6 @@ public class GameManager : MonoBehaviour
 
     Fade fade;
 
-    [Header("Game")]
-    [SerializeField] Transform player;
-
-    [SerializeField] int teleportBackTimes = 3;
-    int teleportBackCount = 0;
-
     [Header("Camera Handle")]
     CameraMode cameraMode = CameraMode.Static;
 
@@ -37,8 +31,6 @@ public class GameManager : MonoBehaviour
 
 
     public static GameManager Instance { get => instance; }
-    public int TeleportBackCount { get => teleportBackCount; set => teleportBackCount = value; }
-    public bool IsInStartLoop() => teleportBackCount < teleportBackTimes;
 
     private void Awake()
     {
@@ -66,12 +58,7 @@ public class GameManager : MonoBehaviour
 
     void HandleCameraState()
     {
-        if (IsInStartLoop()) return;
 
-        if (player.position.x > cameraHolder.position.x && player.position.x < clampDynamicRegion.min)
-            cameraMode = CameraMode.FollowRight;
-        else if (player.position.x > clampDynamicRegion.min && player.position.x < clampDynamicRegion.max)
-            cameraMode = CameraMode.ClampDynamic;
     }
 
     private void OnDrawGizmos()
