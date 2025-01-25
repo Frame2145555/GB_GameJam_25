@@ -4580,6 +4580,37 @@ MonoBehaviour:
   - {x: 1.6026459, y: -2.8800776, z: 0}
   - {x: 1.6173859, y: 0.8392067, z: 0}
   - {x: -2.2214203, y: 0.7876482, z: 0}
+--- !u!1 &567606635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 567606636}
+  m_Layer: 0
+  m_Name: Floor Spike Spawn Reference
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &567606636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567606635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.34, y: -4.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 696090682}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &573321161
 GameObject:
   m_ObjectHideFlags: 0
@@ -4967,6 +4998,7 @@ GameObject:
   - component: {fileID: 696090682}
   - component: {fileID: 696090683}
   - component: {fileID: 696090684}
+  - component: {fileID: 696090685}
   m_Layer: 0
   m_Name: PattternStore
   m_TagString: Untagged
@@ -4989,6 +5021,8 @@ Transform:
   m_Children:
   - {fileID: 234528866}
   - {fileID: 1483354767}
+  - {fileID: 567606636}
+  - {fileID: 1539597464}
   m_Father: {fileID: 6434504456646749694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &696090683
@@ -5025,11 +5059,33 @@ MonoBehaviour:
   objectsToSpawn: {fileID: 5204877083141358646, guid: 964dc06ebcb15d74cbcde4a7c2ab6a3d, type: 3}
   referenceObject: {fileID: 1483354766}
   minObjectsPerBatch: 3
-  maxObjectsPerBatch: 10
-  radius: 9.48
+  maxObjectsPerBatch: 5
+  radius: 7.92
   positionNoise: 1
-  spawnInterval: 1
-  pinBatchCount: 6
+  spawnInterval: 0.6
+  pinBatchCount: 100
+  centerBiasFactor: 1
+--- !u!114 &696090685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696090681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374a36a0b37279a45a8fd0ce4ce80260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platfrom: {fileID: 8759831315727823693, guid: 7f38817910a0eb545ba3e7c2d0905718, type: 3}
+  spike: {fileID: 2222790723791403726, guid: 7a1a9d0a7e5e2fa42a9c2176af8785fe, type: 3}
+  platfromSpawnReference: {fileID: 1539597464}
+  spikeSpawnReference: {fileID: 567606636}
+  spikeSpawnInterval: 0.3
+  platformSpawnInterval: 2
+  platformSpawnRange:
+    min: -3
+    max: 2
 --- !u!1 &713686772
 GameObject:
   m_ObjectHideFlags: 0
@@ -10303,6 +10359,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1539597463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1539597464}
+  m_Layer: 0
+  m_Name: Platform Spawn Reference
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1539597464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539597463}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.18, y: -0.93, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 696090682}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1549029983
 GameObject:
   m_ObjectHideFlags: 0
