@@ -13,9 +13,9 @@ public class firstMapController : concreteBullet
     }
     public override void PatternEnd()
     {
-        base.PatternEnd();
         StopCoroutine(thornMovementCoroutine);  // Stop the specific coroutine
         thornMovementCoroutine = null;
+        base.PatternEnd();
     }
 
     protected override void Update()

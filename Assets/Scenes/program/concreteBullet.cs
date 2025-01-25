@@ -20,6 +20,8 @@ public abstract class concreteBullet:MonoBehaviour
     public virtual void PatternEnd()
     {
         Debug.Log("Pattern ended");
+        this.enabled = false;
     }
+
 }
 
