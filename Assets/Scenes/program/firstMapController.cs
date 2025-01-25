@@ -1,14 +1,31 @@
 using UnityEngine;
 using System.Collections;
 
-public class firstMapController : MonoBehaviour
+public class firstMapController : concreteBullet
 {
     [SerializeField] GameObject thorn;
     public float moveSpeed = 0.1f;  // Speed at which the thorn moves (units per second)
-
-    private void Start()
+    private Coroutine thornMovementCoroutine;
+    public override void PatternStart()
     {
-        StartCoroutine(transformPosition());
+        base.PatternStart();
+        thornMovementCoroutine = StartCoroutine(transformPosition());
+    }
+    public override void PatternEnd()
+    {
+        base.PatternEnd();
+        StopCoroutine(thornMovementCoroutine);  // Stop the specific coroutine
+        thornMovementCoroutine = null;
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+        //Debug.Log(thorn.transform.position.x);
+        if(thorn.transform.position.x <= -52f)
+        {
+            PatternEnd();
+        }
     }
 
     private IEnumerator transformPosition()
