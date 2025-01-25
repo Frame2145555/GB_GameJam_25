@@ -21,7 +21,6 @@ public class secondMapController : concreteBullet
 
     public override void PatternEnd()
     {
-        base.PatternEnd();
 
         // If the coroutine is running, stop it
         if (spawnCoroutine != null)
@@ -29,6 +28,7 @@ public class secondMapController : concreteBullet
             StopCoroutine(spawnCoroutine);
             spawnCoroutine = null;
         }
+        base.PatternEnd();
     }
 
     private IEnumerator SpawnBullets()
