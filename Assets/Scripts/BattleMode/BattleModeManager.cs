@@ -14,8 +14,8 @@ public class BattleModeManager : MonoBehaviour
     static BattleModeManager instance;
 
     [Header("Reference")]
-    [SerializeField] BattleModeDialogueStore bmds;
-    [SerializeField] BattleModePatternStore bmps;
+    BattleModeDialogueStore bmds;
+    BattleModePatternStore bmps;
 
     [SerializeField] GameObject map;
 
