@@ -26,16 +26,16 @@ public class PlayerControllerSample : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
         }
-for (int i = 0; i < anim.Count; i++)
-{
-    if (InputManager.Instance.GetMoveVector().x!=0)
-{
-    anim[i].runanmation();
-}else
-{
-    anim[i].idleanmation();
-}
-}
+        for (int i = 0; i < anim.Count; i++)
+        {
+        if (InputManager.Instance.GetMoveVector().x!=0)
+        {
+            anim[i].runanmation();
+        }else
+        {
+        anim[i].idleanmation();
+        }
+    }
 
 
 
