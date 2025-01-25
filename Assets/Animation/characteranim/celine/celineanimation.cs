@@ -17,6 +17,7 @@ public class celineanimation : MonoBehaviour
 
     public void runanmation() { anim.SetBool("isrun", true); }
     public void idleanmation() { anim.SetBool("isrun", false); }
+    public void jebleaw(){anim.SetFloat("chapter3", 1);}
 
     int isleft()
     {  float x =  Input.GetAxis("Horizontal");
