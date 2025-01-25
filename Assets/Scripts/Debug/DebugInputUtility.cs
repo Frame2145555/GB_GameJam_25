@@ -13,10 +13,6 @@ public class DebugInputUtility : MonoBehaviour
     }
     private void Update()
     {
-        if (InputManager.Instance.IsInteractKeyDown && !BattleModeManager.Instance.IsBattleModeActive)
-        {
-            BattleModeManager.Instance.EnterBattleMode();
-        }
 
         if (Input.GetKeyDown(KeyCode.I))
         {

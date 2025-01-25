@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.PostProcessing;
 
 public enum CameraMode
 {
     Static,
+    FollowRight,
     ClampDynamic
 }
 
@@ -10,13 +13,10 @@ public class GameManager : MonoBehaviour
 {
     static GameManager instance;
 
-    Fade fade;
+    int loop;
 
-    [Header("Game")]
-    [SerializeField] int teleportBackTimes = 3;
-    int teleportBackCount = 0;
+
     public static GameManager Instance { get => instance; }
-    public int TeleportBackCount { get => teleportBackCount; set => teleportBackCount = value; }
 
     private void Awake()
     {
@@ -34,12 +34,17 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        fade = FindAnyObjectByType<Fade>();
+
     }
 
     private void Update()
     {
-        
+
+    }
+
+    private void OnDrawGizmos()
+    {
+
     }
 
 }
