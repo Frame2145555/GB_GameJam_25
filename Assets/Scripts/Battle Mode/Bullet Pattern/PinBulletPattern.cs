@@ -12,7 +12,6 @@ public class PinBulletPattern : ConcreteBulletPattern
     {
         base.PatternStart();
 
-        // If the coroutine is not already running, start it
         if (spawnCoroutine == null)
         {
             spawnCoroutine = StartCoroutine(SpawnBullets());
