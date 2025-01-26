@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/MainMap/Menu.unity
+    guid: 0f21ef253eb15334cb497e56525d4d5c
+  - enabled: 1
+    path: Assets/Scenes/Frame/Map1/Map1_Frame.unity
+    guid: e609dc1945caa9b49a2bd341bb471c95
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
