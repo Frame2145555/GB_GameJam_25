@@ -24,10 +24,13 @@ public class KnifePattern : ConcreteBulletPattern
 
     public override void PatternEnd()
     {
+        knifeCounter = 0;
+        timer = 0;
         base.PatternEnd();
     }
     protected override void Update()
     {
+        base.Update();
         // Spawn knives at random intervals
         timer += Time.deltaTime;
         if (timer >= currentSpawnInterval)

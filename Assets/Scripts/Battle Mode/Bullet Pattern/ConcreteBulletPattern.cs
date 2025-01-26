@@ -7,12 +7,19 @@ public abstract class ConcreteBulletPattern : MonoBehaviour
     public UnityAction OnPatternStart;
     public UnityAction OnPatternEnd;
 
-    private void Start()
+    [SerializeField] ControllerMode controllerMode = ControllerMode.Topdown;
+
+    public ControllerMode GetControllerMode() => controllerMode;
+
+    private void OnEnable()
     {
         PatternStart();
     }
 
-    protected abstract void Update();
+    protected virtual void Update()
+    {
+        BattleModeManager.Instance.IsInBattle = true;
+    }
 
     public virtual void PatternStart()
     {

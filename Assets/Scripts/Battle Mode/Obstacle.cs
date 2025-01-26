@@ -26,7 +26,8 @@ public class Obstacle : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        LookAtVelocity();
+        if (!LockVelocityToTransform) 
+            LookAtVelocity();
     }
 
     private void LookAtVelocity()
@@ -41,7 +42,7 @@ public class Obstacle : MonoBehaviour
 
         if (LockVelocityToTransform)
         {
-            velocity = transform.up * velocity.magnitude;
+            velocity = transform.right * velocity.magnitude;
         }
 
         transform.Translate(velocity * Time.deltaTime);

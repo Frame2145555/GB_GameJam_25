@@ -1,7 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using static UnityEngine.GraphicsBuffer;
 
 public enum BattleModeMode
 {
@@ -16,13 +18,22 @@ public class BattleModeManager : MonoBehaviour
     [Header("Reference")]
     BattleModeDialogueStore bmds;
     BattleModePatternStore bmps;
+    Health playerHP;
+    Fade fade;
+    GameObject playmodePlayer;
+    GameObject battlemodePlayer;
 
     [SerializeField] GameObject map;
     [SerializeField] Transform battleCameraPosition;
+    [SerializeField] Transform lostCameraPosition;
+    [SerializeField] Transform lostPlayerSpawnPosition;
+    [SerializeField] Vector2 battlePlayerStartPosition;
 
     [Header("BattleModeTimeline")]
     [SerializeField] List<BattleModeMode> battleModeTimeline;
 
+    bool gameWon = false;
+    bool gameLost = false;
 
     bool isInBattle;
     bool isBattleModeActive;
@@ -33,6 +44,7 @@ public class BattleModeManager : MonoBehaviour
 
     public UnityAction OnBattleStart;
     public UnityAction OnBattleEnd;
+    private float fadeDuration;
 
     public bool IsBattleModeActive { get => isBattleModeActive; }
     public bool IsInBattle { get => isInBattle; set => isInBattle = value; }
@@ -50,10 +62,23 @@ public class BattleModeManager : MonoBehaviour
         }
         #endregion
     }
+    private void OnEnable()
+    {
+        playerHP = FindAnyObjectByType<Health>();
+        playerHP.OnDead += GameLost;
+    }
+    private void OnDisable()
+    {
+        playerHP.OnDead -= GameLost;
+    }
     void Start()
     {
         bmds = GetComponent<BattleModeDialogueStore>();
         bmps = GetComponent<BattleModePatternStore>();
+
+        fade = FindAnyObjectByType<Fade>();
+        playmodePlayer = FindAnyObjectByType<PlayModeController>().gameObject;
+        battlemodePlayer = FindAnyObjectByType<BattleModeController>().gameObject;
     }
 
     // Update is called once per frame
@@ -64,17 +89,17 @@ public class BattleModeManager : MonoBehaviour
 
         if (isInBattle || DialogueManager.Instance.DialogueIsPlaying)
             return;
-
-        if (InputManager.Instance.IsInteractKeyDown)
-            NextBattlePhase();
     }
     
     public void NextBattlePhase()
     {
+        if (!isBattleModeActive)
+            return;
+
         if (currentBattleIndex + 1 >= battleModeTimeline.Count)
         {
-            Debug.LogWarning("No more items in timeline. Index = " + currentBattleIndex);
-            return;
+            Debug.Log("Game Victory");
+            GameVictory();
         }
 
         currentBattleIndex++;
@@ -94,13 +119,78 @@ public class BattleModeManager : MonoBehaviour
 
     public void EnterBattleMode()
     {
+
         isBattleModeActive = true;
         OnBattleModeEnter?.Invoke();
+
+        battlemodePlayer.transform.position = battlePlayerStartPosition;
 
         Camera.main.transform.position = battleCameraPosition.position;
 
         map.SetActive(true);
+        battlemodePlayer.SetActive(true);
+        battlemodePlayer.transform.position = battlePlayerStartPosition;
+        playmodePlayer.SetActive(false);
+
+        gameWon = false;
+        gameLost = false;
+
         NextBattlePhase();
     }
 
+    public void GameVictory()
+    {
+        gameWon= true;
+        fade.PlayFadeOut(fadeDuration);
+        Invoke(nameof(PlayFadeIn),3);
+        fade.OnFadeInFinish+= OnFadeInFinishedWon;
+    }
+
+    void OnFadeInFinishedWon()
+    {
+        //warp camera to end dialogue;
+        fade.OnFadeInFinish-= OnFadeInFinishedWon;
+    }
+    void PlayFadeIn() => fade.PlayFadeIn(fadeDuration);
+
+    public void GameLost()
+    {
+        gameLost = true;
+        playmodePlayer.transform.position = lostPlayerSpawnPosition.position;
+        battlemodePlayer.transform.position = battlePlayerStartPosition;
+        fade.PlayFadeOut(fadeDuration);
+        bmps.ForceEnd();
+        playerHP.Reset();
+        map.SetActive(false);
+        battlemodePlayer.SetActive(false);
+        Invoke(nameof(PlayFadeIn), 3);
+        fade.OnFadeInFinish += OnFadeInFinishedLost;
+        ExitBattleMode();
+    }
+
+    void OnFadeInFinishedLost()
+    {
+        //Set activate playmode player
+        playmodePlayer.gameObject.SetActive(true);
+
+        //Force End Pattern
+
+        //Disablemap
+
+        //Reset its health calss
+        fade.OnFadeInFinish -= OnFadeInFinishedLost;
+
+        //Disable BattlePLayer
+
+        Camera.main.transform.position = lostCameraPosition.transform.position;
+
+    }
+
+    public void ExitBattleMode()
+    {
+        currentBattleIndex = -1;
+        bmds.DialogueIndex = -1;
+        bmps.CurrentPatternIndex = -1;
+        isBattleModeActive = false;
+    }
 }

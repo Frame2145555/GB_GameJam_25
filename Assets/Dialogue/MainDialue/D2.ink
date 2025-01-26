@@ -1,1 +1,1 @@
-"I wonder if I've seen this image before, haven't I?"  #Speaker:Cline #Spawn:Cline #Target:Cline #x:-600 #y:-160 #size:0.7     #size:0.7 #Fact:3
+"I wonder if I've seen this image before, haven't I?"  #Speaker:Cline #Spawn:Cline #Target:Cline #x:-600 #y:-160 #size:0.7 #Face:3

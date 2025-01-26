@@ -70,7 +70,6 @@ public class Fade : MonoBehaviour
 
     public void PlayFadeIn(float duration)
     {
-        Debug.Log("Start Fade In");
         currentAlpha = MAX_ALPHA;
         fadeDuration = duration;
         doFadeIn = true;
@@ -79,7 +78,6 @@ public class Fade : MonoBehaviour
 
     public void PlayFadeOut(float duration)
     {
-        Debug.Log("Start Fade Out");
         currentAlpha = MIN_ALPHA;
         fadeDuration = duration;
         doFadeOut = true;

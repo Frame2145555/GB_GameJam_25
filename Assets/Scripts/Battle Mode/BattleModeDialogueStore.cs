@@ -1,4 +1,5 @@
 using Ink.Parsed;
+using Ink.Runtime;
 using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class BattleModeDialogueStore : MonoBehaviour
 
 
     int dialogueIndex = -1;
+
+    public int DialogueIndex { get => dialogueIndex; set => dialogueIndex = value; }
 
     private void Start()
     {
@@ -41,5 +44,12 @@ public class BattleModeDialogueStore : MonoBehaviour
             inkJSON_s[dialogueIndex],
             animControllersWithTags[dialogueIndex].innerList);
 
+        DialogueManager.Instance.OnDialogueExit += OnDialogueExit;
+    }
+
+    void OnDialogueExit()
+    {
+        BattleModeManager.Instance.NextBattlePhase();
+        DialogueManager.Instance.OnDialogueExit -= OnDialogueExit;
     }
 }
