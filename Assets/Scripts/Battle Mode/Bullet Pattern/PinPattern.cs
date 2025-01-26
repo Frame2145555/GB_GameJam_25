@@ -25,10 +25,13 @@ public class PinPattern : ConcreteBulletPattern
 
     public override void PatternEnd()
     {
+        pinBatchCounter = 0;
         base.PatternEnd();
     }
     protected override void Update()
     {
+        base.Update();
+
         // Spawn knives at random intervals
         timer += Time.deltaTime;
         if (timer >= spawnInterval)

@@ -190,9 +190,9 @@ public class DialogueManager : MonoBehaviour
                     targetRectTransform.localScale = Vector3.one * float.Parse(value); 
                     break;
                 case DIALOUGE_VALUE_TAG:
-                    
+                    break;
                 default:
-                    Debug.Log("Tag key doesn't exist. Tag key : " + key);
+                    Debug.LogWarning("Tag key doesn't exist. Tag key : " + key);
                     break;
             }
         }

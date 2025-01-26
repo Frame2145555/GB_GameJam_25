@@ -22,6 +22,9 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (!BattleModeManager.Instance.IsInBattle)
+            return;
+
         if (!IsAlive())
             return;
 
