@@ -18,6 +18,7 @@ public class BattleModeManager : MonoBehaviour
     BattleModePatternStore bmps;
 
     [SerializeField] GameObject map;
+    [SerializeField] Transform battleCameraPosition;
 
     [Header("BattleModeTimeline")]
     [SerializeField] List<BattleModeMode> battleModeTimeline;
@@ -30,9 +31,12 @@ public class BattleModeManager : MonoBehaviour
 
     public UnityAction OnBattleModeEnter;
 
+    public UnityAction OnBattleStart;
+    public UnityAction OnBattleEnd;
+
     public bool IsBattleModeActive { get => isBattleModeActive; }
-    public bool IsInBattle { get => isInBattle; }
-    public static BattleModeManager Instance { get => instance; }
+    public bool IsInBattle { get => isInBattle; set => isInBattle = value; }
+    public static BattleModeManager Instance { get => instance;}
     private void Awake()
     {
         #region Singleton
@@ -65,7 +69,7 @@ public class BattleModeManager : MonoBehaviour
             NextBattlePhase();
     }
     
-    void NextBattlePhase()
+    public void NextBattlePhase()
     {
         if (currentBattleIndex + 1 >= battleModeTimeline.Count)
         {
@@ -86,7 +90,6 @@ public class BattleModeManager : MonoBehaviour
             default:
                 break;
         }
-
     }
 
     public void EnterBattleMode()
@@ -94,6 +97,10 @@ public class BattleModeManager : MonoBehaviour
         isBattleModeActive = true;
         OnBattleModeEnter?.Invoke();
 
+        Camera.main.transform.position = battleCameraPosition.position;
+
         map.SetActive(true);
+        NextBattlePhase();
     }
+
 }

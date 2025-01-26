@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using System;
 using UnityEditor.Animations;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -31,9 +32,14 @@ public class DialogueManager : MonoBehaviour
     RectTransform targetRectTransform;
     Animator targetAnimator;
 
+    string valueTag = "";
+
     Story currentStory;
     
     bool dialogueIsPlaying;
+
+    public UnityAction OnDialogueEnter;
+    public UnityAction OnDialogueExit;
 
     const string SPEAKER_TAG = "Speaker";
     const string SPAWN_TAG = "Spawn";
@@ -42,11 +48,13 @@ public class DialogueManager : MonoBehaviour
     const string XPOS_TAG = "x";
     const string YPOS_TAG = "y";
     const string SIZE_TAG = "size";
+    const string DIALOUGE_VALUE_TAG = "value";
 
     Color32 GRAYOUT_COLOR = new Color32(127, 127, 127, 255);
     
     public static DialogueManager Instance { get => instance; } 
     public bool DialogueIsPlaying { get => dialogueIsPlaying; }
+    public string ValueTag { get => valueTag; }
 
     private void Awake()
     {
@@ -99,6 +107,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         ContinueStory();
+
+        OnDialogueEnter?.Invoke();
     }
 
     IEnumerator ExitDialogueMode()
@@ -119,6 +129,8 @@ public class DialogueManager : MonoBehaviour
         }
         characterStore.Clear();
         animControllerStore.Clear();
+
+        OnDialogueExit?.Invoke();
     }
 
     void ContinueStory()
@@ -126,9 +138,6 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
-
-            DisplayChoices();
-
             Parsetag(currentStory.currentTags);
         }
         else
@@ -180,6 +189,8 @@ public class DialogueManager : MonoBehaviour
                 case SIZE_TAG:
                     targetRectTransform.localScale = Vector3.one * float.Parse(value); 
                     break;
+                case DIALOUGE_VALUE_TAG:
+                    
                 default:
                     Debug.Log("Tag key doesn't exist. Tag key : " + key);
                     break;
@@ -187,42 +198,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void DisplayChoices()
-    {
-        List<Choice> currentChoices = currentStory.currentChoices;
 
-        if(currentChoices.Count > choices.Length)
-        {
-            Debug.LogWarning("More choices were given more than the UI can support. Number of choice given : " + currentChoices.Count);
-        }
-
-        int i = 0;
-        foreach(Choice choice in currentChoices)
-        {
-            choices[i].gameObject.SetActive(true);
-            choicesText[i].text = choice.text;
-            i++;
-        }
-
-        for (int j = i; j < choices.Length; j++)
-        {
-            choices[j].gameObject.SetActive(false);
-        }
-        StartCoroutine(SelectFirstChoiche());
-    }
-
-    IEnumerator SelectFirstChoiche()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-        yield return new WaitForEndOfFrame();
-        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
-
-    }
-
-    public void MakeChoice(int choiceIndex)
-    {
-        currentStory.ChooseChoiceIndex(choiceIndex);
-        ContinueStory();
-    }
 
 }

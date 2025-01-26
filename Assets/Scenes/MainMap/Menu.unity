@@ -119,6 +119,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &108854233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108854235}
+  - component: {fileID: 108854234}
+  m_Layer: 0
+  m_Name: Code
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &108854234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108854233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b3568d7647acc42ae35e766907c484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Map1_Frame
+--- !u!4 &108854235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108854233}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1162.8455, y: 438.57684, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &518567421
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +314,7 @@ GameObject:
   - component: {fileID: 735636589}
   - component: {fileID: 735636592}
   - component: {fileID: 735636591}
+  - component: {fileID: 735636593}
   - component: {fileID: 735636590}
   m_Layer: 5
   m_Name: Button (Legacy) (1)
@@ -339,7 +385,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 735636591}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 108854234}
+        m_TargetAssemblyTypeName: uimanager, Assembly-CSharp
+        m_MethodName: exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &735636591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +436,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735636588}
   m_CullTransparentMesh: 1
+--- !u!114 &735636593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735636588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f353779ffd26a6e41ac53cd08f4ca947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverCursor: {fileID: 2800000, guid: b5568d89cc9ebc741833df2c8ed4ba46, type: 3}
+  clickCursor: {fileID: 2800000, guid: 5cc0739576c79dc458772b71f7363aa0, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 589ac4382f869bc4d854fb48b4bdb5e4, type: 3}
+  cursorHotspot: {x: 0, y: 0}
 --- !u!1 &916691723
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +679,7 @@ GameObject:
   - component: {fileID: 2041729779}
   - component: {fileID: 2041729782}
   - component: {fileID: 2041729781}
+  - component: {fileID: 2041729783}
   - component: {fileID: 2041729780}
   m_Layer: 5
   m_Name: Button (Legacy)
@@ -675,7 +750,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2041729781}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 108854234}
+        m_TargetAssemblyTypeName: uimanager, Assembly-CSharp
+        m_MethodName: Startgame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2041729781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +801,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041729778}
   m_CullTransparentMesh: 1
+--- !u!114 &2041729783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041729778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f353779ffd26a6e41ac53cd08f4ca947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverCursor: {fileID: 2800000, guid: b5568d89cc9ebc741833df2c8ed4ba46, type: 3}
+  clickCursor: {fileID: 2800000, guid: 5cc0739576c79dc458772b71f7363aa0, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 589ac4382f869bc4d854fb48b4bdb5e4, type: 3}
+  cursorHotspot: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -721,3 +824,4 @@ SceneRoots:
   - {fileID: 916691726}
   - {fileID: 518567425}
   - {fileID: 1475457332}
+  - {fileID: 108854235}

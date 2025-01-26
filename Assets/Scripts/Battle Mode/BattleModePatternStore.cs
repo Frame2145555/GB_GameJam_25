@@ -7,6 +7,8 @@ public class BattleModePatternStore : MonoBehaviour
     [SerializeField] GameObject patternHolder;
     [SerializeField] List<ConcreteBulletPattern> bulletPatterns = new List<ConcreteBulletPattern>();
 
+    ConcreteBulletPattern currentPattern;
+
     int currentPatternIndex = -1;
     public void NextPattern()
     {
@@ -17,15 +19,17 @@ public class BattleModePatternStore : MonoBehaviour
         
         currentPatternIndex++;
 
-        Debug.Log("Played Pattern #" + currentPatternIndex);
+        currentPattern = bulletPatterns[currentPatternIndex];
+        currentPattern.enabled = true;
 
-        // bulletPatterns[currentPatternIndex].enabled = true;
-
+        currentPattern.OnPatternEnd += OnPatternEnd;
     }
 
-}
-
-internal class ConcreteBulletPattern : MonoBehaviour
-{ 
+    void OnPatternEnd()
+    {
+        currentPattern.OnPatternEnd -= OnPatternEnd;
+        currentPattern = null;
+        BattleModeManager.Instance.NextBattlePhase();
+    }
 
 }

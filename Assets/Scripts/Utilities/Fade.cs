@@ -24,6 +24,8 @@ public class Fade : MonoBehaviour
     bool doFadeOut = false;
 
     public bool IsFading {  get { return isFading; } }
+    public bool IsFadingIn {  get { return doFadeIn; } }
+    public bool IsFadingOut {  get { return doFadeOut; } }
 
     private void Start()
     {

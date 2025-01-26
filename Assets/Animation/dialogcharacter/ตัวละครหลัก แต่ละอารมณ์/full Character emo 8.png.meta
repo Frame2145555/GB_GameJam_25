@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 8a05db08434b32a419b16ba00b6a74a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6083896624900388220
+    second: full Character emo 8_0
+  - first:
+      213: 2943613360536526659
+    second: full Character emo 8_1
+  - first:
+      213: 1931387654908063738
+    second: full Character emo 8_2
+  - first:
+      213: -7074544029277536521
+    second: full Character emo 8_3
+  - first:
+      213: 8482536153604242344
+    second: full Character emo 8_4
+  - first:
+      213: -356826316075251216
+    second: full Character emo 8_5
+  - first:
+      213: 989482397440346968
+    second: full Character emo 8_6
+  - first:
+      213: 5559811671819564263
+    second: full Character emo 8_7
+  - first:
+      213: 1265098950774916699
+    second: full Character emo 8_8
+  - first:
+      213: -298580112274260069
+    second: full Character emo 8_9
+  - first:
+      213: 6110166374872023350
+    second: full Character emo 8_10
+  - first:
+      213: -2702008373988520856
+    second: full Character emo 8_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: full Character emo 8_0
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1815
+        width: 94
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75b2691fb75e6450800000000000000
+      internalID: 6083896624900388220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 1834
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f9fd661c0d9d820800000000000000
+      internalID: 2943613360536526659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_2
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1793
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: affae56d6daadca10800000000000000
+      internalID: 1931387654908063738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1808
+        width: 41
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fe3d0b10bb22dd90800000000000000
+      internalID: -7074544029277536521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1772
+        width: 10
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ab3df570b508b570800000000000000
+      internalID: 8482536153604242344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_5
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1778
+        width: 55
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f9c2d72b5c4c0bf0800000000000000
+      internalID: -356826316075251216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_6
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1789
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85b0fea7ff85bbd00800000000000000
+      internalID: 989482397440346968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_7
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1797
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e430e4224b682d40800000000000000
+      internalID: 5559811671819564263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_8
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1791
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5688aefac88e8110800000000000000
+      internalID: 1265098950774916699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 573
+        height: 1791
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9f75e648fa3bdbf0800000000000000
+      internalID: -298580112274260069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_10
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1782
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63188c4e1fbabc450800000000000000
+      internalID: 6110166374872023350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full Character emo 8_11
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1780
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86c884023b9808ad0800000000000000
+      internalID: -2702008373988520856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      full Character emo 8_0: 6083896624900388220
+      full Character emo 8_1: 2943613360536526659
+      full Character emo 8_10: 6110166374872023350
+      full Character emo 8_11: -2702008373988520856
+      full Character emo 8_2: 1931387654908063738
+      full Character emo 8_3: -7074544029277536521
+      full Character emo 8_4: 8482536153604242344
+      full Character emo 8_5: -356826316075251216
+      full Character emo 8_6: 989482397440346968
+      full Character emo 8_7: 5559811671819564263
+      full Character emo 8_8: 1265098950774916699
+      full Character emo 8_9: -298580112274260069
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

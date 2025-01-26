@@ -4,20 +4,25 @@ using UnityEngine.Events;
 
 public class TeleportTrigger : MonoBehaviour
 {
+    Transform cameraTransform;
     [Header("Teleport To Position")]
-    [SerializeField] Vector3 target = Vector3.zero;
+    [SerializeField] Transform target;
+    [SerializeField] Transform cameraTarget;
 
     [Header("Handle Fade")]
     [SerializeField] float fadeInTime = 0.2f;
     [SerializeField] float fadeOutTime = 0.5f;
-
+     
     Fade fade;
 
     UnityEvent onFadeFinished = new UnityEvent();
 
+    private int countLoop = 0;
+
     private void Start()
     {
         fade = FindAnyObjectByType<Fade>();
+        cameraTransform = Camera.main.transform;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,10 +31,11 @@ public class TeleportTrigger : MonoBehaviour
         {
             fade.OnFadeInFinish += SendFadeNotify;
             fade.OnFadeOutFinish += SendFadeNotify;
-
-            GameManager.Instance.TeleportBackCount++;
             StartCoroutine(TriggerTeleportEvent(collision.gameObject));
 
+            countLoop++;
+
+              
         }
     }
 
@@ -41,7 +47,8 @@ public class TeleportTrigger : MonoBehaviour
         onFadeFinished.AddListener(() => isFadeOutFinished = true);
         yield return new WaitUntil(() => isFadeOutFinished);
 
-        player.transform.position = target;
+        player.transform.position = target.position;
+        cameraTransform.position = cameraTarget.position;
         fade.PlayFadeIn(fadeInTime);
 
         onFadeFinished.RemoveAllListeners();
@@ -52,5 +59,19 @@ public class TeleportTrigger : MonoBehaviour
     void SendFadeNotify()
     {
         onFadeFinished?.Invoke();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Vector2 TL = new Vector3(-6.22f*2, 3.5f*2)  + cameraTarget.position;
+        Vector2 TR = new Vector3(6.22f * 2, 3.5f * 2)   + cameraTarget.position;
+        Vector2 BL = new Vector3(-6.22f * 2, -3.5f * 2) + cameraTarget.position;
+        Vector2 BR = new Vector3(6.22f * 2, -3.5f * 2)  + cameraTarget.position;
+
+        Gizmos.DrawLine(TL, TR);
+        Gizmos.DrawLine(TR, BR);
+        Gizmos.DrawLine(BR, BL);
+        Gizmos.DrawLine(BL, TL);
     }
 }
